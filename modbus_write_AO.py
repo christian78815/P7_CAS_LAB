@@ -15,6 +15,8 @@ import time
 # Verbindung initialisieren
 c = ModbusClient(host="192.168.1.4", port=502, unit_id=1, auto_open=True)
 
+frequency = 25.0  # Hz
+
 voltage = frequency * 0.2  # 0..10V bei 50Hz
 # Scale to 0..32767 (16-bit signed positive range used by device)
 int_value = int(round((voltage / 10.0) * 32767))
